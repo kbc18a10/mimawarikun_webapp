@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>部屋一覧</title>
+    <link rel="stylesheet" type="text/css" href="roomList.css">
+</head>
+<body>
+    <header>
+        <img id="title" src="./images/taitolinu.png" />
+    </header>
+
+    <img id="menu" src="./images/tai.png" />
+    <!--- 部屋の一覧を表示するエリア　--->
+    <div class="roomlist">
+        <!--- 取得した部屋と編集・削除ボタン表示 --->
+        <table id="resultTable" border="1">
+            <tr><th>101</th><td><a href="./edit.html">編集</a></td><td><a href="./delete.html">削除</a></td></tr>
+            <tr><th>102</th><td><a href="./edit.html">編集</a></td><td><a href="./delete.html">削除</a></td></tr>
+            <tr><th>103</th><td><a href="./edit.html">編集</a></td><td><a href="./delete.html">削除</a></td></tr>
+            <tr><th>201</th><td><a href="./edit.html">編集</a></td><td><a href="./delete.html">削除</a></td></tr>
+            <tr><th>202</th><td><a href="./edit.html">編集</a></td><td><a href="./delete.html">削除</a></td></tr>
+            <tr><th>203</th><td><a href="./edit.html">編集</a></td><td><a href="./delete.html">削除</a></td></tr>
+            <tr><th>204</th><td><a href="./edit.html">編集</a></td><td><a href="./delete.html">削除</a></td></tr>
+        </table>
+    </div>
+    <!--ページネーション-->
+    <div class="pagenation">
+        <button type=“button” id="page1" onclick="">1</button>
+        <button type=“button” id="page2" onclick="">2</button>
+        <button type=“button” id="page3" onclick="">3</button>
+    </div>
+    <!--他ページへの遷移ボタン-->
+    <div class="btn_area">
+        <button id="to_addroom" onclick="location.href='./addroom.html'">部屋の追加</button>
+        <button id="to_top" onclick="location.href='./top.html'">top画面へ</button>
+    </div>
+</body>
+</html>
