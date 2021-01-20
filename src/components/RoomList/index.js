@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
+import '../../styles/roomList.css'
+
+
 export default class RoomList extends Component{
     
     render(){
@@ -28,7 +31,7 @@ export default class RoomList extends Component{
                         <button id="to_addroom">部屋の追加</button>
                     </Link>
                     <Link to={`/top`}>
-                        <button id="to_top" onClick={this.to_top}>top画面へ</button>
+                        <button id="to_top">top画面へ</button>
                     </Link>
                 </div>
             </div>

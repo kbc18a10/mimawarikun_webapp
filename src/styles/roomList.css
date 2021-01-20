@@ -43,6 +43,8 @@ body {
     text-decoration: none;
 }
 
+#resultTable a:visited{color:#000}
+
 #resultTable a:link{ color:#000}
 
 #resultTable a:hover  { color: #bb6d76; } 
