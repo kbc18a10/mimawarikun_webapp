@@ -1,0 +1,92 @@
+@font-face {
+	font-family: 'Courgette';
+	src: url(Courgette-Regular.ttf);
+}
+
+body {
+    font-family: Courgette;
+    font-size: 30px;
+    background:#F8F6EC;
+}
+
+#title{
+     height:100px;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+#menu{
+    height:80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -30px;
+}
+
+#resultTable{
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#resultTable th{
+    width: 200px;
+}
+
+#resultTable td{
+    width: 400px;
+    text-align:center;
+}
+
+#resultTable a{
+    text-decoration: none;
+}
+
+#resultTable a:link{ color:#000}
+
+#resultTable a:hover  { color: #bb6d76; } 
+
+button{
+    font-size:20px;
+    width:150px;
+}
+
+.pagenation{
+    text-align: right;
+    margin-right:170px;
+}
+
+.pagenation button{
+    background: #EED1C0;
+    width:30px;
+}
+
+.pagenation button:hover{
+    background-color: #DE9587;
+}
+
+.btn_area{
+    text-align: right;
+    margin-top:30px;
+    margin-right:170px;
+}
+
+.btn_area button{
+    background:#D5C4C6;
+}
+
+.btn_area button:hover{
+    background-color:#BB6D76;
+}
+
+#to_addroom{
+    bottom:30px;
+    right:280px;
+}
+
+#to_top{
+    bottom:30px;
+    right:120px;
+}
+

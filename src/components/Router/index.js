@@ -1,17 +1,24 @@
 import {
     BrowserRouter,
-    Route
+    Route,
+    Switch
   } from "react-router-dom";
   
 import RoomList from "../RoomList";
+import Top from "../Top";
+import Addroom from "../Addroom";
 import React,{Component} from "react";   
 
-export default class Router extends Component{
+export default class Router extends React.Component{
 
   render(){
     return(
       <BrowserRouter>
+        <Switch>
           <Route path="/" component={RoomList} /> 
+          <Route path='/top' component={Top} /> 
+          <Route path='/addroom' component={Addroom} />
+        </Switch>
       </BrowserRouter>
       )
   }
