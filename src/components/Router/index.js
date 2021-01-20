@@ -15,9 +15,9 @@ export default class Router extends React.Component{
     return(
       <BrowserRouter>
         <Switch>
-          <Route path="/" component={RoomList} /> 
           <Route path='/top' component={Top} /> 
           <Route path='/addroom' component={Addroom} />
+          <Route path='/' component={RoomList} />
         </Switch>
       </BrowserRouter>
       )
