@@ -1,0 +1,38 @@
+@font-face {
+	font-family: 'Courgette';
+	src: url(Courgette-Regular.ttf);
+}
+
+#form body {
+    font-family: 'Courgette';
+    background:#F8F6EC;
+}
+
+#form form {
+    font-size: 20px;
+}
+
+#form button {
+    width: 120px;
+    height: 30px;
+    background-color: #EED1C0;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+#form img {
+    width: 400px;
+    height: 80px;
+}
+
+#form p{
+    margin-bottom: 10px;
+}
+
+#form a {
+    font-size: 13px;
+}
+
+#form div {
+    text-align:center;
+}
