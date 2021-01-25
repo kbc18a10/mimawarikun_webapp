@@ -3,16 +3,16 @@
 	src: url(Courgette-Regular.ttf);
 }
 
-body {
+#form body {
     font-family: 'Courgette';
     background:#F8F6EC;
 }
 
-form {
+#form form {
     font-size: 20px;
 }
 
-button {
+#form button {
     width: 120px;
     height: 30px;
     background-color: #EED1C0;
@@ -20,14 +20,19 @@ button {
     margin: 20px;
 }
 
-p{
+#form img {
+    width: 400px;
+    height: 80px;
+}
+
+#form p{
     margin-bottom: 10px;
 }
 
-a {
+#form a {
     font-size: 13px;
 }
 
-div {
+#form div {
     text-align:center;
 }

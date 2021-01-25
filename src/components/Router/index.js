@@ -19,7 +19,7 @@ export default class Router extends React.Component{
         <Switch>
           <Route path='/top' component={Top} /> 
           <Route path='/addroom' component={Addroom} />
-          {/* <Route path='/' component={RoomList} /> */}
+          <Route path='/roomlist' component={RoomList} />
           {/* ↓書き換えた直す */}
           <Route path="/" component={Login}/>
         </Switch>

@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import '../../styles/Login.css'
+import loginlogo from './images/loginlogo.png'
 
 export default class Login extends Component{
 
     render(){
         return (
-            <div>
+            <div id="form">
                 <form action="" method="post">
-                    <h2>ログイン</h2>
+                    <img src={loginlogo}/>
                     <p>mail address</p>
                     <input type="text" size="30" name="maddr"/>
                     <p>password</p>
