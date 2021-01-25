@@ -9,6 +9,8 @@ import Top from "../Top";
 import Addroom from "../Addroom";
 import React,{Component} from "react";   
 
+import Login from "../Login"
+
 export default class Router extends React.Component{
 
   render(){
@@ -17,7 +19,9 @@ export default class Router extends React.Component{
         <Switch>
           <Route path='/top' component={Top} /> 
           <Route path='/addroom' component={Addroom} />
-          <Route path='/' component={RoomList} />
+          {/* <Route path='/' component={RoomList} /> */}
+          {/* ↓書き換えた直す */}
+          <Route path="/" component={Login}/>
         </Switch>
       </BrowserRouter>
       )
