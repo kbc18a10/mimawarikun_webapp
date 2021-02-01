@@ -39,6 +39,14 @@ body {
     text-align:center;
 }
 
+#resultTable tr{
+    height: 60px;
+}
+
+#resultTable tbody{
+    display:block;
+}
+
 #resultTable a{
     text-decoration: none;
 }
