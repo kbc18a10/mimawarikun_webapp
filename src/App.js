@@ -4,7 +4,6 @@ import { render } from 'react-dom'
 import Header from './components/Header'
 import Router from './components/Router'
 
-
 function App() {
   return (
     <div>
