@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import '../../styles/Addroom.css'
 
 export default class Addroom extends Component {
@@ -59,8 +60,8 @@ export default class Addroom extends Component {
                 </div>
 
                 <div id="button-area3">
-                    <button id="button" type="button" name="room table" value="b" type="submit">部屋の一覧表示</button>
-                    <button id="button" type="button" name="room table" value="b" type="submit">top画面へ</button>
+                    <Link to={`/RoomList`}><button id="button" type="button">部屋の一覧表示</button></Link>
+                    <Link to={`/top`}><button id="button" type="button">top画面へ</button></Link>
                 </div>
 
             </div>

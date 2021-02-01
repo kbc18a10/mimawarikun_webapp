@@ -27,12 +27,8 @@ export default class RoomList extends Component{
                     <button type="button" id="page3">3</button>
                 </div>
                 <div className="btn_area">
-                    <Link to={`/addroom`}>
-                        <button id="to_addroom">部屋の追加</button>
-                    </Link>
-                    <Link to={`/top`}>
-                        <button id="to_top">top画面へ</button>
-                    </Link>
+                    <Link to={`/addroom`}><button id="to_addroom">部屋の追加</button></Link>
+                    <Link to={`/top`}><button id="to_top">top画面へ</button></Link>
                 </div>
             </div>
         )
