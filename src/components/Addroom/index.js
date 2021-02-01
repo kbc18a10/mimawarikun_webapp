@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import '../../styles/Addroom.css'
+import '../../styles/addroom.css'
 
 export default class Addroom extends Component {
     render() {
