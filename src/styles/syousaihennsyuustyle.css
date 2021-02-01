@@ -18,9 +18,12 @@ td {
   text-align:right;
 }
 button{
+  height: 60px;
+  width: 150px;
 	background-color: #d5c4c6;
-	border-radius:30px;
-	border: none;
+  border-radius:30px;
+  border: none;
+  font-size: 15px;
 
 }
 .button-area {
