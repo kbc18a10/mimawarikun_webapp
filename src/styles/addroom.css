@@ -1,23 +1,23 @@
-*{
+#addroom *{
    padding: 0px;
    margin: 0px;
 }
 
-#leftblock{
+#addroom #leftblock{
    float:left;
    width: 40%;
    height: 300px;
    
 }
 
-#rightblock{
+#addroom #rightblock{
    float: left;
    width: 40%;
    height: 300px;
   
 }
 
-#buttonplus{
+#addroom #buttonplus{
    float: right;
    width: 20%;
    height: 120px;
@@ -25,68 +25,68 @@
    
 }
 
-#leftblock p{
+#addroom #leftblock p{
    text-align: center;
    font-size: 40px;
 }
 
-#rightblock p{
+#addroom #rightblock p{
    text-align: center;
    font-size: 40px;
 }
 
-#button-circle{
+#addroom #button-circle{
    width: 60px;
    height: 60px;
    margin-left: 30px;
    border-radius: 100%;
 }
 
-#button-circle2{
+#addroom #button-circle2{
    width: 150px;
    height: 80px;
    margin-left: 70%;
    border-radius: 50%;
 }
 
-#button-area3{
+#addroom #button-area3{
    margin-left: 60%;
 }
 
-#button{
+#addroom #button{
    width: auto;
 }
 
 
-#texttittle {
+#addroom #texttittle {
    margin: 20px;
 }
 
 
-#texttittle p{
+#addroom #texttittle p{
    text-align: left;
    font-size: 25px;
    margin: 0 20px;
 }
 
-#leftblock input{
+#addroom #leftblock input{
    text-align: center;
    font-size: 30px;
    margin: 0 20px;
 }
 
-#rightblock input{
+#addroom #rightblock input{
    text-align: center;
    font-size: 30px;
    margin: 0 20px;
 }
 
-#main{
+#addroom #main{
   margin: 0 30px;
   border: solid thin black;
 }
 
-button{
+#addroom button{
    font-size: 30px;
     background-color: #d5c4c6;
    padding: 10px 20px;
@@ -95,6 +95,6 @@ button{
 }
 
 
-button:hover {
+#addroom button:hover {
    background-color: #bb6d76;
   }

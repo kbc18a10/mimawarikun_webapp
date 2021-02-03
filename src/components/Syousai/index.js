@@ -32,7 +32,7 @@ export default class syousaihennsyuu extends Component{
     render(){
         var kekka= this.bunnkatukunn();
         return (
-            <div>
+            <div id="syousai">
                 <img id="menu" src="https://s3-ap-northeast-1.amazonaws.com/mimawarikun.strage/tai2.png" />
                 <div className="Detailedediting">
                     <table id="Detailedediting" border="1">

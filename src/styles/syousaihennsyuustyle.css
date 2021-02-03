@@ -1,23 +1,23 @@
-body{
+#syousai body{
 	background-color: #f8f6ec;
 }
-div {text-align:center;}
-table {
+#syousai {text-align:center;}
+#syousai table {
       border-collapse: collapse;
       border: 0px none;
     }
-td {
+#syousai td {
       width:500px;
       height:45px;
     }
 
-.noborder {
+#syousai .noborder {
   border: 0px none;
   font-size:18px;
   font-weight: bold;
   text-align:right;
 }
-button{
+#syousai button{
   height: 60px;
   width: 150px;
 	background-color: #d5c4c6;
@@ -26,14 +26,14 @@ button{
   font-size: 15px;
 
 }
-.button-area {
+#syousai .button-area {
   text-align: right;
 }
-button:hover {
+#syousai button:hover {
  background-color: #bb6d76;
 }
 
-input{
+#syousai input{
 	width:493px;
 	height:48px;
 	margin:0px;
@@ -41,7 +41,7 @@ input{
 }
 
 
-hr {
+#syousai hr {
 	background-color: #bb6d76;
   border-top: 1px dashed #ccc;
   margin-top:-242px;

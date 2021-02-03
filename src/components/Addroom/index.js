@@ -6,7 +6,7 @@ export default class Addroom extends Component {
     render() {
         return (
 
-            <div>
+            <div id="addroom">
                 <img id="menu" src="https://s3-ap-northeast-1.amazonaws.com/mimawarikun.strage/tai.png" />
                 <div>
 

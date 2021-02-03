@@ -46,14 +46,14 @@ export default class Login extends Component {
         return (
             <div id="form">
                 {/* action属性は環境に合わせた宛先に変えておく */}
-                <div>
+                <form>
                     <img src={loginlogo} />
                     <p>mail address</p>
                     <input type="text" size="30" name="email" onChange={this.setEmail} />
                     <p>password</p>
                     <input type="password" size="30" name="password" onChange={this.setPaswword} /><br />
                     <button onClick={this.doLogin}>login</button>
-                </div>
+                </form>
                 <a href="">→新規登録</a>
             </div>
         )
