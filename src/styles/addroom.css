@@ -1,0 +1,100 @@
+*{
+   padding: 0px;
+   margin: 0px;
+}
+
+#leftblock{
+   float:left;
+   width: 40%;
+   height: 300px;
+   
+}
+
+#rightblock{
+   float: left;
+   width: 40%;
+   height: 300px;
+  
+}
+
+#buttonplus{
+   float: right;
+   width: 20%;
+   height: 120px;
+   padding-top: 180px;
+   
+}
+
+#leftblock p{
+   text-align: center;
+   font-size: 40px;
+}
+
+#rightblock p{
+   text-align: center;
+   font-size: 40px;
+}
+
+#button-circle{
+   width: 60px;
+   height: 60px;
+   margin-left: 30px;
+   border-radius: 100%;
+}
+
+#button-circle2{
+   width: 150px;
+   height: 80px;
+   margin-left: 70%;
+   border-radius: 50%;
+}
+
+#button-area3{
+   margin-left: 60%;
+}
+
+#button{
+   width: auto;
+}
+
+
+#texttittle {
+   margin: 20px;
+}
+
+
+#texttittle p{
+   text-align: left;
+   font-size: 25px;
+   margin: 0 20px;
+}
+
+#leftblock input{
+   text-align: center;
+   font-size: 30px;
+   margin: 0 20px;
+}
+
+#rightblock input{
+   text-align: center;
+   font-size: 30px;
+   margin: 0 20px;
+}
+
+#main{
+  margin: 0 30px;
+  border: solid thin black;
+}
+
+button{
+   font-size: 30px;
+    background-color: #d5c4c6;
+   padding: 10px 20px;
+   margin: 10px;
+    border: solid thin;
+}
+
+
+button:hover {
+   background-color: #bb6d76;
+  }

@@ -1,0 +1,49 @@
+body{
+	background-color: #f8f6ec;
+}
+div {text-align:center;}
+table {
+      border-collapse: collapse;
+      border: 0px none;
+    }
+td {
+      width:500px;
+      height:45px;
+    }
+
+.noborder {
+  border: 0px none;
+  font-size:18px;
+  font-weight: bold;
+  text-align:right;
+}
+button{
+  height: 60px;
+  width: 150px;
+	background-color: #d5c4c6;
+  border-radius:30px;
+  border: none;
+  font-size: 15px;
+
+}
+.button-area {
+  text-align: right;
+}
+button:hover {
+ background-color: #bb6d76;
+}
+
+input{
+	width:493px;
+	height:48px;
+	margin:0px;
+	padding:0px;
+}
+
+
+hr {
+	background-color: #bb6d76;
+  border-top: 1px dashed #ccc;
+  margin-top:-242px;
+
+}
