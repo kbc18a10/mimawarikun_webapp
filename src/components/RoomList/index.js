@@ -1,45 +1,43 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
+import tai from './images/tai.png'
 import '../../styles/roomList.css'
-
 
 export default class RoomList extends Component{
     constructor(props){
         super(props)
-        const rooms = [{name:101},{name:102},{name:103},{name:104},{name:105},{name:106},{name:107}] //仮
-        //const rooms = []
         this.state = {
             token:'7BOtayK7Y7a7urkG03MjLrKCejeoKATfTYOiyXXK9zxNsIMDTZcRAfYCWZQt',
-            roomInfo:rooms,
-            index:1,
-            page:Math.ceil(rooms.length / 5),
+            roomInfo:{},
+            init:false
         }
-        //this.setRoomInfo()
         this.setIndex = this.setIndex.bind(this);
     }
 
     async getRoomInfo(url) {
-        const headers = {'Content-Type': 'application/json','token':this.state.token}
+        axios.defaults.headers.common = {token: this.state.token};
         try{
-            const response = await (await fetch(url,{mode: 'no-cors', headers: headers})).text() 
+            const response = await (await axios.get(url)).data
+            this.setState({roomInfo:response,init:true})
             console.log(response)
         }catch(error){
             console.error('Error:', error)
         }
     }
 
-    setRoomInfo(){
-        this.getRoomInfo('http://localhost:8085/api/room')
+    setRoomInfo(url = 'http://localhost:8085/api/room'){
+        this.getRoomInfo(url)  
     }
 
     setIndex(e){
-        this.setState({index:e.target.value})
+        this.setRoomInfo(e.target.value)
     }
 
     getPagenation(){
         var buttons = []
-        for(let i = 1;i <= this.state.page;i++){
-            var btn = <button type="button" id={"page"+i} value={i} onClick={this.setIndex}>{i}</button>
+        for(let i = 1;i <= this.state.roomInfo.last_page;i++){
+            var btn = <button type="button" id={"page"+i} key={"page"+i} value={this.state.roomInfo.links[i].url} onClick={this.setIndex}>{i}</button>
             buttons.push(btn)
         }
         var element = React.createElement('div',{id:'page'},buttons)
@@ -47,28 +45,26 @@ export default class RoomList extends Component{
     }
 
     getTable(){
-        const startIndex = (this.state.index - 1) * 5
-        let endIndex = startIndex + 4
-        if(this.state.roomInfo.length < endIndex){
-            endIndex = this.state.roomInfo.length - 1
-        }
         var rows = []
-        this.state.roomInfo.forEach((element,index) => {
-            if(startIndex <= index && index <= endIndex){
-                var row = <tr><th>{element['name']}</th><td><a href="./edit">編集</a></td><td><a href="./delete">削除</a></td></tr>
-                rows.push(row)
-            }
+        this.state.roomInfo.data.forEach((element,index) => {
+            var row = <tr key={index}><th>{element.name}</th><td><a href="./syousai">編集</a></td><td><a href="./delete">削除</a></td></tr>
+            rows.push(row)
         })
         var element = React.createElement('table',{id:'resultTable',border:'1'},rows)
         return element
     }
     
     render(){
-        const roomTable = this.getTable()
-        const pagenation = this.getPagenation()
+        let roomTable,pagenation
+        if(!this.state.init){
+            this.setRoomInfo()
+        }else{
+            roomTable = this.getTable()
+            pagenation = this.getPagenation()
+        }
         return (
             <div>
-                <img id="menu" src="https://s3-ap-northeast-1.amazonaws.com/mimawarikun.strage/tai.png" />
+                <img id="menu" src={tai} />
                 <div className="roomlist">
                     <table id="resultTable" border="1">
                         {roomTable}
