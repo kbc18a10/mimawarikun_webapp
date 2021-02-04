@@ -10,6 +10,7 @@
 
 #form form {
     font-size: 20px;
+    text-align: center;
 }
 
 #form button {
@@ -33,6 +34,6 @@
     font-size: 13px;
 }
 
-#form div {
+#form{
     text-align:center;
 }
