@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../../styles/Login.css';
 import loginlogo from '../../images/loginlogo.png';
 import axios from 'axios';
-import {Redirect,Link} from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 export default class Login extends Component {
     constructor(props) {
@@ -10,7 +10,8 @@ export default class Login extends Component {
 
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            isLogin: localStorage.getItem('api_token') ? true : false
         };
 
         this.doLogin = this.doLogin.bind(this);
@@ -27,9 +28,10 @@ export default class Login extends Component {
         try {
             const res = await (await axios.post(url, data)).data;
             console.log(res);
-            localStorage.setItem('api_token',res.api_token);
+            localStorage.setItem('api_token', res.api_token);
             console.log(localStorage);
 
+            this.setState({ isLogin: true });
         } catch (error) {
             console.log(error.response);
         }
@@ -44,8 +46,8 @@ export default class Login extends Component {
     }
 
     render() {
-        if(localStorage.getItem('api_token')){
-            return <Redirect to="/top" compoent="../Top"/>
+        if (this.state.isLogin) {
+            return <Redirect to="/top" compoent="../Top" />
         }
 
         return (
