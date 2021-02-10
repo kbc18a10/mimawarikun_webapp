@@ -1,13 +1,19 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import '../../styles/Top.css'
+import axios from 'axios';
 
 interface Props {
 }
 
 //部屋の型
 interface Room {
+    id: number,
+    user_id: number
     name: string,
+    class: string,
+    created_at: string,
+    updated_at: string,
     electricity: boolean
     person: boolean,
     window: boolean
@@ -22,7 +28,7 @@ interface State {
 
 export default class Top extends Component<Props, State>{
     state = {
-        token: '',
+        token: 'W3F9gkQpgaRjNairZdToCugR4KtydOLmzVQfbOwqFiuoRpwqAY1RSflIAMRM',
         roomList: [],
         displayType: 'all'
     };
@@ -35,6 +41,30 @@ export default class Top extends Component<Props, State>{
 
     setDisplayType(e: any) {
         this.setState({ displayType: e.target.value });
+    }
+
+    async getRoomDatas() {
+        const url = `${process.env.REACT_APP_URL}/room/state`
+
+        axios.defaults.headers.common = {
+            token: this.state.token
+        };
+
+        let res;
+        try {
+            res = await (await axios.get(url)).data;
+        } catch (error) {
+            console.log(error.responce);
+            return;
+        }
+        const
+
+            console.log(roomDatas);
+
+    }
+
+    componentDidMount() {
+        this.getRoomDatas();
     }
 
     render() {
