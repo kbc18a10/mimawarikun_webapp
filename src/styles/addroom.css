@@ -3,6 +3,12 @@
    margin: 0px;
 }
 
+.clearfix:after {
+   content: "";
+   clear: both;
+   display: block;
+}
+
 #addroom #leftblock{
    float:left;
    width: 40%;
@@ -13,7 +19,7 @@
 #addroom #rightblock{
    float: left;
    width: 40%;
-   height: 300px;
+   height: 100%;
   
 }
 
@@ -21,9 +27,18 @@
    float: right;
    width: 20%;
    height: 120px;
-   padding-top: 180px;
-   
+   position: fixed;
+   top:260px;
+   right:40px;
 }
+
+#addroom #button-circle{
+   width: 60px;
+   height: 60px;
+   margin-left: 30px;
+   border-radius: 100%;
+}
+
 
 #addroom #leftblock p{
    text-align: center;
@@ -35,19 +50,13 @@
    font-size: 40px;
 }
 
-#addroom #button-circle{
-   width: 60px;
-   height: 60px;
-   margin-left: 30px;
-   border-radius: 100%;
-}
-
 #addroom #button-circle2{
    width: 150px;
    height: 80px;
    margin-left: 70%;
    border-radius: 50%;
 }
+
 
 #addroom #button-area3{
    margin-left: 60%;
@@ -57,13 +66,30 @@
    width: auto;
 }
 
+/*
+#addroom .remove{
+   float:right;
+   vertical-align:middle;
+   height:30px;
+   width: 30px;
+   padding:10px;
+   margin-top:-245px;
+   outline:none;
+}
 
-#addroom #texttittle {
+#addroom .remove p{
+   margin-top:-17px;
+   margin-left:-7px;
+   font-size: 30px;
+}
+*/
+
+#addroom .textTitle {
    margin: 20px;
 }
 
 
-#addroom #texttittle p{
+#addroom .textTitle p{
    text-align: left;
    font-size: 25px;
    margin: 0 20px;
@@ -81,8 +107,8 @@
    margin: 0 20px;
 }
 
-#addroom #main{
-  margin: 0 30px;
+#addroom .main{
+  margin: 10px 30px;
   border: solid thin black;
 }
 
