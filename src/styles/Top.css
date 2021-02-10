@@ -3,9 +3,18 @@ input.radiobutton {
   height: 2em;
 }
 
+#maintable {
+  border-collapse: collapse;
+}
+
 #maintable th {
   width: 250px;
   height: 50px;
+  border: 2px #808080 solid;
+}
+
+#maintable td {
+  border: 2px #808080 solid;
 }
 
 #button-area {
