@@ -6,6 +6,10 @@ export default class NewEntry extends Component {
         super(props);
     }
 
+    inputCheck(){
+        
+    }
+
     render(){
         return(
             <div id="new_entry">
