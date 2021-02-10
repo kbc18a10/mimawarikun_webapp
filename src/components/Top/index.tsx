@@ -23,6 +23,7 @@ interface State {
     token: string,
     roomList: Room[],
     displayType: string,
+    lastPageNum: number
 }
 
 
@@ -30,7 +31,8 @@ export default class Top extends Component<Props, State>{
     state = {
         token: 'W3F9gkQpgaRjNairZdToCugR4KtydOLmzVQfbOwqFiuoRpwqAY1RSflIAMRM',
         roomList: [],
-        displayType: 'all'
+        displayType: 'all',
+        lastPageNum: 0
     };
 
     constructor(props: Props) {
@@ -43,8 +45,8 @@ export default class Top extends Component<Props, State>{
         this.setState({ displayType: e.target.value });
     }
 
-    async getRoomDatas() {
-        const url = `${process.env.REACT_APP_URL}/room/state`
+    async getRoomDatas(pageNum: number = 0) {
+        const url = `${process.env.REACT_APP_URL}/room/state?page${pageNum}`;
 
         axios.defaults.headers.common = {
             token: this.state.token
@@ -57,10 +59,13 @@ export default class Top extends Component<Props, State>{
             console.log(error.responce);
             return;
         }
-        const
 
-            console.log(roomDatas);
 
+        const roomDatas = res;
+
+        console.log(roomDatas);
+
+        this.setState({ lastPageNum: res.original.last_page });
     }
 
     componentDidMount() {
