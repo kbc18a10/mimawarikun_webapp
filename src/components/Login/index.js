@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import '../../styles/Login.css'
-import loginlogo from './images/loginlogo.png'
+import React, { Component } from 'react';
+import '../../styles/Login.css';
+import loginlogo from '../../images/loginlogo.png';
 import axios from 'axios';
-import {Redirect} from 'react-router-dom'
+import {Redirect,Link} from 'react-router-dom';
 
 export default class Login extends Component {
     constructor(props) {
@@ -44,6 +44,7 @@ export default class Login extends Component {
     }
 
     render() {
+        localStorage.removeItem('api_token');
         if(localStorage.getItem('api_token')){
             return <Redirect to="/top" compoent="../Top"/>
         }
@@ -59,7 +60,7 @@ export default class Login extends Component {
                     <input type="password" size="30" name="password" onChange={this.setPaswword} /><br />
                     <button onClick={this.doLogin}>login</button>
                 </div>
-                <a href="">→新規登録</a>
+                <Link to={`/newentry`}>→新規登録</Link>
             </div>
         )
     }
