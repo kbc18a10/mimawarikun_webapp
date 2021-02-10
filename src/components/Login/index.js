@@ -44,7 +44,6 @@ export default class Login extends Component {
     }
 
     render() {
-        localStorage.removeItem('api_token');
         if(localStorage.getItem('api_token')){
             return <Redirect to="/top" compoent="../Top"/>
         }
