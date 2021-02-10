@@ -17,9 +17,9 @@ export default class Top extends Component {
         return (
             <div>
                 <div id="radiobutton">
-                    <p className="radios-description">表示タイプを選択</p>
+                    <p className="radios-description">表示する状態を選択</p>
                     <p>
-                        <input type="radio" name="r1" value="ichirannhyouji" class="radiobutton" />一覧表示
+                        <input type="radio" name="r1" value="ichirannhyouji" class="radiobutton" />
                         <input type="radio" name="r1" value="dennki" class="radiobutton" />電気
                         <input type="radio" name="r1" value="hitonoumu" class="radiobutton" />人の有無
                         <input type="radio" name="r1" value="madonosejyou" class="radiobutton" />窓の施錠
