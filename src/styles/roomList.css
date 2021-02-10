@@ -1,14 +1,3 @@
-@font-face {
-	font-family: 'Courgette';
-	src: url(Courgette-Regular.ttf);
-}
-
-body {
-    font-family: Courgette;
-    font-size: 30px;
-    background:#F8F6EC;
-}
-
 #title{
      height:100px;
      display: block;

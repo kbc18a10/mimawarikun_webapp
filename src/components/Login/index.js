@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
-import '../../styles/Login.css'
-import loginlogo from './images/loginlogo.png'
+import React, { Component } from 'react';
+import '../../styles/Login.css';
+import loginlogo from '../../images/loginlogo.png';
 import axios from 'axios';
+import {Redirect,Link} from 'react-router-dom';
 
 export default class Login extends Component {
     constructor(props) {
@@ -43,18 +44,23 @@ export default class Login extends Component {
     }
 
     render() {
+        localStorage.removeItem('api_token');
+        if(localStorage.getItem('api_token')){
+            return <Redirect to="/top" compoent="../Top"/>
+        }
+
         return (
             <div id="form">
                 {/* action属性は環境に合わせた宛先に変えておく */}
-                <form>
+                <div>
                     <img src={loginlogo} />
                     <p>mail address</p>
                     <input type="text" size="30" name="email" onChange={this.setEmail} />
                     <p>password</p>
                     <input type="password" size="30" name="password" onChange={this.setPaswword} /><br />
                     <button onClick={this.doLogin}>login</button>
-                </form>
-                <a href="">→新規登録</a>
+                </div>
+                <Link to={`/newentry`}>→新規登録</Link>
             </div>
         )
     }

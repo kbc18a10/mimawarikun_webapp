@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'Courgette';
+	src: url(Courgette-Regular.ttf);
+}
+
+body {
+    font-family: Courgette;
+    background:#F8F6EC;
+}
