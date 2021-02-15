@@ -1,13 +1,3 @@
-@font-face {
-	font-family: 'Courgette';
-	src: url(Courgette-Regular.ttf);
-}
-
-#form body {
-    font-family: 'Courgette';
-    background:#F8F6EC;
-}
-
 #form form {
     font-size: 20px;
     text-align: center;
