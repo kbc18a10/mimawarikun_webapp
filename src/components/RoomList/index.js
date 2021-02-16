@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import axios from 'axios'
 import tai from './images/tai.png'
+import Syousai from '../Syousai'
 import '../../styles/roomList.css'
 
 export default class RoomList extends Component{
@@ -13,6 +14,7 @@ export default class RoomList extends Component{
             init:false
         }
         this.setIndex = this.setIndex.bind(this);
+        this.redirect = this.redirect.bind(this);
     }
 
     async getRoomInfo(url) {
@@ -47,11 +49,18 @@ export default class RoomList extends Component{
     getTable(){
         var rows = []
         this.state.roomInfo.data.forEach((element,index) => {
-            var row = <tr key={index}><th>{element.name}</th><td><a href="./syousai">編集</a></td><td><a href="./delete">削除</a></td></tr>
+            var row = <tr key={index}><th>{element.name}</th><td><a id={element.id} href='' onClick={e => this.redirect(e)}>編集</a></td><td><a href="./delete">削除</a></td></tr>
             rows.push(row)
         })
         var element = React.createElement('table',{id:'resultTable',border:'1'},rows)
         return element
+    }
+
+    redirect(e){
+        this.props.history.push({
+            pathname: "/syousai",
+            state: { id: e.target.id }
+        });
     }
     
     render(){
