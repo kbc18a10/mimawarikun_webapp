@@ -20,7 +20,7 @@ interface Room {
 }
 
 interface State {
-    token: string,
+    token: string | null,
     roomList: Room[],
     roomListIndex: number,
     displayType: string,
@@ -31,7 +31,7 @@ interface State {
 
 export default class Top extends Component<Props, State>{
     state = {
-        token: 'W3F9gkQpgaRjNairZdToCugR4KtydOLmzVQfbOwqFiuoRpwqAY1RSflIAMRM',
+        token: localStorage.getItem('api_token'),
         roomList: [],
         roomListIndex: 0,
         displayType: 'all',
@@ -80,10 +80,10 @@ export default class Top extends Component<Props, State>{
 
             tableDatas.push(
                 <tr>
-                    <td>{room.name}</td>
-                    <td>{room.person ? '×' : ''}</td>
-                    <td>{room.electricity ? '×' : ''}</td>
-                    <td>{room.window ? '×' : ''}</td>
+                    <td className={'roomname'}>{room.name}</td>
+                    <td><h1>{room.person ? '×' : ''}</h1></td>
+                    <td><h1>{room.electricity ? '×' : ''}</h1></td>
+                    <td><h1>{room.window ? '×' : ''}</h1></td>
                 </tr>
             );
         });

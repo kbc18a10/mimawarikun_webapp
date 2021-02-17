@@ -5,14 +5,14 @@ import '../../styles/addroom.css'
 
 
 export default class Addroom extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
-            token:'7BOtayK7Y7a7urkG03MjLrKCejeoKATfTYOiyXXK9zxNsIMDTZcRAfYCWZQt',
-            roomNo:"",
-            className:'',
-            cameraInfo:[],
-            cameraEls:[],
+            token: localStorage.getItem('api_token'),
+            roomNo: "",
+            className: '',
+            cameraInfo: [],
+            cameraEls: [],
         }
         this.addCamera = this.addCamera.bind(this);
         //this.removeCamera = this.removeCamera.bind(this);
@@ -24,39 +24,39 @@ export default class Addroom extends Component {
         this.addCamera()
     }
 
-    addCamera(){
+    addCamera() {
         var info = this.state.cameraInfo;
         var element = {
-            id:info.length + 1,
-            name:"",
+            id: info.length + 1,
+            name: "",
             usetype: ""
         };
         info.push(element);
-        this.setState({cameraInfo:info})
+        this.setState({ cameraInfo: info })
         const len = this.state.cameraInfo.length;
         const name = 'cameraName' + len;
         const usage = 'usage' + len;
         //const btnId = 'btn' + len;
-        var inputNameEle = <input id={name} type="text" onChange={e => this.handleOnChangeCameraName(e)}/>
-        var camInfo = [<p>カメラ名</p>,inputNameEle];
-        var element1 = React.createElement('div',{className:'textTitle'},camInfo);
-        var inputUsageEle = <input id={usage} type="text" onChange={e => this.handleOnChangeUsage(e)}/>
-        var usageInfo = [<p>利用用途</p>,inputUsageEle];
-        var element2 = React.createElement('div',{className:'textTitle'},usageInfo);
+        var inputNameEle = <input id={name} type="text" onChange={e => this.handleOnChangeCameraName(e)} />
+        var camInfo = [<p>カメラ名</p>, inputNameEle];
+        var element1 = React.createElement('div', { className: 'textTitle' }, camInfo);
+        var inputUsageEle = <input id={usage} type="text" onChange={e => this.handleOnChangeUsage(e)} />
+        var usageInfo = [<p>利用用途</p>, inputUsageEle];
+        var element2 = React.createElement('div', { className: 'textTitle' }, usageInfo);
         //var btn = <button className="remove" id={btnId} value='x' type="button" onClick={e => this.removeCamera(e)}/>
-        
+
         /*
         var elements = [element1,element2,btn];
         if(this.state.cameraEls == ""){
             elements = [element1,element2];
         }
         */
-        var elements = [element1,element2];
-        var camera = React.createElement('div',{className:'main'},elements);
+        var elements = [element1, element2];
+        var camera = React.createElement('div', { className: 'main' }, elements);
         var cameraEls = this.state.cameraEls;
         cameraEls.push(camera);
 
-        this.setState({cameraEls:cameraEls});
+        this.setState({ cameraEls: cameraEls });
     }
 
     /*
@@ -87,54 +87,54 @@ export default class Addroom extends Component {
     }
     */
 
-    outputCamera(){
-        var output =React.createElement('div',{},this.state.cameraEls);
+    outputCamera() {
+        var output = React.createElement('div', {}, this.state.cameraEls);
         return output;
     }
 
-    async submitData(){
+    async submitData() {
         const roomNo = this.state.roomNo;
         const className = this.state.className;
         const cameraInfo = this.state.cameraInfo;
-        var roomInfo = {name:roomNo,class:className,cameras:cameraInfo};
+        var roomInfo = { name: roomNo, class: className, cameras: cameraInfo };
         var url = 'http://localhost:8085/api/room';
-        try{
-            axios.defaults.headers.common = {token: this.state.token};
-            await (await axios.post(url,roomInfo));
-        }catch(error){
-            console.log('Error:',error)
+        try {
+            axios.defaults.headers.common = { token: this.state.token };
+            await (await axios.post(url, roomInfo));
+        } catch (error) {
+            console.log('Error:', error)
         }
     }
 
-    handleOnChangeRoomNo(e){
-        this.setState({roomNo:e.target.value})
+    handleOnChangeRoomNo(e) {
+        this.setState({ roomNo: e.target.value })
     }
 
-    handleOnChangeClassName(e){
+    handleOnChangeClassName(e) {
         console.log(e.target.value)
-        this.setState({className:e.target.value})
+        this.setState({ className: e.target.value })
     }
 
-    handleOnChangeCameraName(e){
+    handleOnChangeCameraName(e) {
         console.log((e.target.id))
         var index = e.target.id.slice(-1);
         var info = this.state.cameraInfo;
-        info[index-1].name=e.target.value;
-        this.setState({cameraInfo:info});
+        info[index - 1].name = e.target.value;
+        this.setState({ cameraInfo: info });
 
     }
 
-    handleOnChangeUsage(e){
+    handleOnChangeUsage(e) {
         console.log((e.target.id));
         var index = e.target.id.slice(-1);
         var info = this.state.cameraInfo;
-        info[index-1].usetype=e.target.value;
-        this.setState({cameraInfo:info});
+        info[index - 1].usetype = e.target.value;
+        this.setState({ cameraInfo: info });
     }
 
     render() {
         console.log(this.state.cameraInfo);
-        var cameras =  this.outputCamera();
+        var cameras = this.outputCamera();
         return (
             <div id="addroom">
                 <div className="clearfix" id='init'>
@@ -143,11 +143,11 @@ export default class Addroom extends Component {
                         <div className="main">
                             <div className="textTitle">
                                 <p>部名番号</p>
-                                <input id="roomInfo" type="text" onChange={e => this.handleOnChangeRoomNo(e)}/>
+                                <input id="roomInfo" type="text" onChange={e => this.handleOnChangeRoomNo(e)} />
                             </div>
                             <div className="textTitle">
                                 <p>クラス名</p>
-                                <input id="cameraInfo" type="text" onChange={e => this.handleOnChangeClassName(e)}/>
+                                <input id="cameraInfo" type="text" onChange={e => this.handleOnChangeClassName(e)} />
                             </div>
                         </div>
                     </div>
