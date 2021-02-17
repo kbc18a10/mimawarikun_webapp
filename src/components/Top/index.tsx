@@ -14,16 +14,18 @@ interface Room {
     class: string,
     created_at: string,
     updated_at: string,
-    electricity: boolean
-    person: boolean,
-    window: boolean
+    electricity?: boolean,
+    person?: boolean,
+    window?: boolean
 }
 
 interface State {
     token: string,
     roomList: Room[],
+    roomListIndex: number,
     displayType: string,
-    lastPageNum: number
+    pagenationLastNumber: number,
+    pagenationActiveNumber: number,
 }
 
 
@@ -31,8 +33,10 @@ export default class Top extends Component<Props, State>{
     state = {
         token: 'W3F9gkQpgaRjNairZdToCugR4KtydOLmzVQfbOwqFiuoRpwqAY1RSflIAMRM',
         roomList: [],
+        roomListIndex: 0,
         displayType: 'all',
-        lastPageNum: 0
+        pagenationLastNumber: 1,
+        pagenationActiveNumber: 0
     };
 
     constructor(props: Props) {
@@ -46,7 +50,7 @@ export default class Top extends Component<Props, State>{
     }
 
     async getRoomDatas(pageNum: number = 0) {
-        const url = `${process.env.REACT_APP_URL}/room/state?page${pageNum}`;
+        const url = `${process.env.REACT_APP_URL}/room/state`;
 
         axios.defaults.headers.common = {
             token: this.state.token
@@ -59,13 +63,46 @@ export default class Top extends Component<Props, State>{
             console.log(error.responce);
             return;
         }
+        const roomDatas: Room[] = res;
 
+        this.setState({ pagenationLastNumber: roomDatas.length })
 
-        const roomDatas = res;
+        this.setState({ roomList: roomDatas });
+    }
 
-        console.log(roomDatas);
+    createRoomTables() {
+        const tableDatas: JSX.Element[] = [];
 
-        this.setState({ lastPageNum: res.original.last_page });
+        this.state.roomList.map((room: Room, index: number) => {
+            if (!room.person && !room.electricity && !room.window) {
+                return;
+            }
+
+            tableDatas.push(
+                <tr>
+                    <td>{room.name}</td>
+                    <td>{room.person ? '×' : ''}</td>
+                    <td>{room.electricity ? '×' : ''}</td>
+                    <td>{room.window ? '×' : ''}</td>
+                </tr>
+            );
+        });
+
+        return tableDatas;
+    }
+
+    createPagenation() {
+        const pagenationButtons: JSX.Element[] = [];
+        console.log(this.state.roomList.length, this.state.roomList);
+
+        for (let i = 1; i <= this.state.roomList.length / 5; i++) {
+            pagenationButtons.push(
+                <button id="buttonn" type="button"
+                    value={i} onClick={() => { }}>{i}</button>
+            );
+        }
+
+        return pagenationButtons;
     }
 
     componentDidMount() {
@@ -101,23 +138,14 @@ export default class Top extends Component<Props, State>{
                         <tr>
                             <th>部屋番号</th><th>電気</th><th>人の有無</th><th>窓の施錠</th>
                         </tr>
-                        <tr>
-                            <td>100</td><td></td><td></td><td></td>
-                        </tr>
-
-                        <tr>
-                            <td>101</td><td></td><td></td><td></td>
-                        </tr>
-
-                        <tr>
-                            <td>102</td><td></td><td></td><td></td>
-                        </tr>
+                        {this.createRoomTables()}
                     </table>
+                    {!this.state.pagenationLastNumber &&
+                        <h1>問題のある部屋はありません。</h1>
+                    }
                 </div>
                 <div id="button-area">
-                    <button id="buttonn" type="button" name="suuji" value="1" >1</button>
-                    <button id="buttonn" type="button" name="suuji" value="2" >2</button>
-                    <button id="buttonn" type="button" name="suuji" value="3" >3</button>
+                    {this.createPagenation()}
                 </div>
                 <div id="button-area2">
                     <Link to={`/top`}><button id="button" type="button">部屋の追加</button></Link>
