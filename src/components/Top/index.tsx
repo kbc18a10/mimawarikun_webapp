@@ -145,10 +145,10 @@ export default class Top extends Component<Props, State>{
                     }
                 </div>
                 <div id="button-area">
-                    {this.createPagenation()}
+                    {/*this.createPagenation()*/}
                 </div>
                 <div id="button-area2">
-                    <Link to={`/top`}><button id="button" type="button">部屋の追加</button></Link>
+                    <Link to={`/addroom`}><button id="button" type="button">部屋の追加</button></Link>
                     <Link to={`/RoomList`}><button id="button" type="button">部屋の一覧表示</button></Link>
                 </div>
             </div>

@@ -1,0 +1,29 @@
+.maintable {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 6px;
+}
+
+.maintable th {
+  width: 250px;
+  height: 50px;
+  border: 2px #808080 solid;
+}
+
+.maintable td {
+  border: 2px #808080 solid;
+  text-align: center;
+}
+
+.delete-answer {
+  text-align: center;
+}
+
+.delete-answer button {
+  margin-bottom: 6px;
+}
+
+.deletebtn {
+  margin-right: 6px;
+}
