@@ -28,8 +28,8 @@ export default class RoomList extends Component {
         }
     }
 
-    setRoomInfo(url = 'http://localhost:8085/api/room') {
-        this.getRoomInfo(url)
+    setRoomInfo(url = `${process.env.REACT_APP_URL}/room`) {
+        this.getRoomInfo(url);
     }
 
     setIndex(e) {
@@ -49,7 +49,7 @@ export default class RoomList extends Component {
     getTable() {
         var rows = []
         this.state.roomInfo.data.forEach((element, index) => {
-            var row = <tr key={index}><th>{element.name}</th><td><a id={element.id} href='' onClick={e => this.redirect(e)}>編集</a></td><td><a href="./delete">削除</a></td></tr>
+            var row = <tr key={index}><th>{element.name}</th><td><a id={element.id} href='' onClick={e => this.redirect(e)}>編集</a></td><td><Link to={`/room/delete/${element.id}`}>削除</Link></td></tr>
             rows.push(row)
         })
         var element = React.createElement('table', { id: 'resultTable', border: '1' }, rows)

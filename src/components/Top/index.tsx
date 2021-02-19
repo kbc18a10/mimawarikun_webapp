@@ -114,7 +114,8 @@ export default class Top extends Component<Props, State>{
             <div>
                 <div id="radiobutton">
                     <p className="radios-description">表示する状態を選択</p>
-                    <p>
+                    {/*
+                        <p>
                         <input type="radio" name="r1" value="all" className="radiobutton"
                             checked={this.state.displayType === 'all'}
                             onChange={this.setDisplayType}
@@ -131,7 +132,8 @@ export default class Top extends Component<Props, State>{
                             checked={this.state.displayType === 'window'}
                             onChange={this.setDisplayType}
                         />窓の施錠
-                    </p>
+                        </p>
+                    */}
                 </div>
                 <div>
                     <table id="maintable">
@@ -145,10 +147,10 @@ export default class Top extends Component<Props, State>{
                     }
                 </div>
                 <div id="button-area">
-                    {this.createPagenation()}
+                    {/*this.createPagenation()*/}
                 </div>
                 <div id="button-area2">
-                    <Link to={`/top`}><button id="button" type="button">部屋の追加</button></Link>
+                    <Link to={`/addroom`}><button id="button" type="button">部屋の追加</button></Link>
                     <Link to={`/RoomList`}><button id="button" type="button">部屋の一覧表示</button></Link>
                 </div>
             </div>

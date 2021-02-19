@@ -43,7 +43,7 @@ class syousaihennsyuu extends Component {
             this.hanntei1()
             return
         }
-        var url = 'http://localhost:8085/api/room/' + this.state.id
+        var url = `${process.env.REACT_APP_URL}/room/` + this.state.id
         axios.defaults.headers.common = { token: this.state.token }
         try {
             var response = await (await axios.get(url)).data
@@ -153,11 +153,12 @@ class syousaihennsyuu extends Component {
         const className = this.state.className
         const cameraInfo = this.state.cameraAry
         const roomInfo = { name: roomNo, class: className, cameras: cameraInfo };
-        var url = 'http://localhost:8085/api/room/' + this.state.id;
+        var url = `${process.env.REACT_APP_URL}/room/` + this.state.id;
         console.log(url)
         try {
             axios.defaults.headers.common = { token: this.state.token };
             await (await axios.put(url, roomInfo));
+
         } catch (error) {
             console.log('Error:', error.response);
         }

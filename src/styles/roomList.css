@@ -1,91 +1,96 @@
-#title{
-     height:100px;
-     display: block;
-     margin-left: auto;
-     margin-right: auto;
+#title {
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#menu{
-    height:80px;
+#menu {
+    height: 80px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: -30px;
 }
 
-#resultTable{
+#resultTable {
     border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
 }
 
-#resultTable th{
+#resultTable th {
     width: 200px;
 }
 
-#resultTable td{
+#resultTable td {
     width: 400px;
-    text-align:center;
+    text-align: center;
 }
 
-#resultTable tr{
+#resultTable tr {
     height: 60px;
 }
 
-#resultTable tbody{
-    display:block;
+#resultTable tbody {
+    display: block;
 }
 
-#resultTable a{
+#resultTable a {
     text-decoration: none;
 }
 
-#resultTable a:visited{color:#000}
-
-#resultTable a:link{ color:#000}
-
-#resultTable a:hover  { color: #bb6d76; } 
-
-button{
-    font-size:20px;
-    width:150px;
+#resultTable a:visited {
+    color: #000
 }
 
-.pagenation{
+#resultTable a:link {
+    color: #000
+}
+
+#resultTable a:hover {
+    color: #bb6d76;
+}
+
+button {
+    font-size: 20px;
+    width: 150px;
+}
+
+.pagenation {
     text-align: right;
-    margin-right:170px;
+    margin-right: 170px;
 }
 
-.pagenation button{
+.pagenation button {
     background: #EED1C0;
-    width:30px;
+    width: 30px;
 }
 
-.pagenation button:hover{
+.pagenation button:hover {
     background-color: #DE9587;
 }
 
-.btn_area{
+.btn_area {
     text-align: right;
-    margin-top:30px;
-    margin-right:170px;
+    margin-top: 30px;
+    margin-right: 170px;
 }
 
-.btn_area button{
-    background:#D5C4C6;
+.btn_area button {
+    background: #D5C4C6;
 }
 
-.btn_area button:hover{
-    background-color:#BB6D76;
+.btn_area button:hover {
+    background-color: #BB6D76;
 }
 
-#to_addroom{
-    bottom:30px;
-    right:280px;
+#to_addroom {
+    bottom: 30px;
+    right: 280px;
 }
 
-#to_top{
-    bottom:30px;
-    right:120px;
+#to_top {
+    bottom: 30px;
+    right: 120px;
 }
-
