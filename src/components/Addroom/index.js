@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import '../../styles/addroom.css'
 
@@ -13,6 +13,7 @@ export default class Addroom extends Component {
             className: '',
             cameraInfo: [],
             cameraEls: [],
+            redirect: ''
         }
         this.addCamera = this.addCamera.bind(this);
         //this.removeCamera = this.removeCamera.bind(this);
@@ -97,10 +98,12 @@ export default class Addroom extends Component {
         const className = this.state.className;
         const cameraInfo = this.state.cameraInfo;
         var roomInfo = { name: roomNo, class: className, cameras: cameraInfo };
-        var url = 'http://localhost:8085/api/room';
+        var url = `${process.env.REACT_APP_URL}/room`;
         try {
             axios.defaults.headers.common = { token: this.state.token };
             await (await axios.post(url, roomInfo));
+
+            this.setState({ redirect: '/RoomList' });
         } catch (error) {
             console.log('Error:', error)
         }
@@ -133,6 +136,12 @@ export default class Addroom extends Component {
     }
 
     render() {
+        if (this.state.redirect) {
+            return (
+                <Redirect to={this.state.redirect} />
+            );
+        }
+
         console.log(this.state.cameraInfo);
         var cameras = this.outputCamera();
         return (

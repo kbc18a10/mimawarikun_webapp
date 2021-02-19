@@ -28,8 +28,8 @@ export default class RoomList extends Component {
         }
     }
 
-    setRoomInfo(url = 'http://localhost:8085/api/room') {
-        this.getRoomInfo(url)
+    setRoomInfo(url = `${process.env.REACT_APP_URL}/room`) {
+        this.getRoomInfo(url);
     }
 
     setIndex(e) {
