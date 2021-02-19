@@ -6,12 +6,12 @@ import {
 
 import RoomList from "../RoomList";
 import Top from "../Top";
-import Addroom from "../AddRoom";
+import Addroom from "../Addroom";
 import Syousai from "../Syousai";
 import NewEntry from '../NewEntry';
 import DeleteRoom from '../DeleteRoom';
 import React, { Component } from "react";
-import '../../styles/total.css'
+import '../../styles/total.css';
 
 
 import Login from "../Login"
