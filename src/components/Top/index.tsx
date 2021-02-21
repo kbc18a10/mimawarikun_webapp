@@ -144,9 +144,6 @@ export default class Top extends Component<Props, State>{
                             {this.createRoomTables()}
                         </tbody>
                     </table>
-                    {!this.state.pagenationLastNumber &&
-                        <h1>問題のある部屋はありません。</h1>
-                    }
                 </div>
                 <div id="button-area">
                     {/*this.createPagenation()*/}
