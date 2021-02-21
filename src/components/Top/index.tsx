@@ -137,10 +137,12 @@ export default class Top extends Component<Props, State>{
                 </div>
                 <div>
                     <table id="maintable">
-                        <tr>
-                            <th>部屋番号</th><th>電気</th><th>人の有無</th><th>窓の施錠</th>
-                        </tr>
-                        {this.createRoomTables()}
+                        <tbody>
+                            <tr>
+                                <th>部屋番号</th><th>電気</th><th>人の有無</th><th>窓の施錠</th>
+                            </tr>
+                            {this.createRoomTables()}
+                        </tbody>
                     </table>
                     {!this.state.pagenationLastNumber &&
                         <h1>問題のある部屋はありません。</h1>
